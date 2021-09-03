@@ -1,0 +1,26 @@
+{% extends 'basic.html'%}
+{% block title %}Remove punctuation{% endblock %}
+{% block body %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulations!!!</strong> Your text has been sucessfully analyzed.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="row ml-10" >
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Analyzed data - {{purpose}}</h5>
+                <p class="card-text">
+                <pre>{{analyzed_text}}</pre>
+                </p>
+                <a href="/" class="btn btn-primary">Go to Editor</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <h1>Analyzed data - {{purpose}}</h1>
+    <p>
+        <pre>{{analyzed_text}}</pre>
+    </p>
+    <button><a href="/">Back</a></button> -->
+{% endblock %}

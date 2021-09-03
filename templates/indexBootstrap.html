@@ -1,0 +1,42 @@
+<!-- # using template inheritance  -->
+
+<!-- inheriting the file here  -->
+{% extends 'basic.html' %}
+
+<!-- adding title to inheritated base template  -->
+{% block title %}Text Analyzer{% endblock %}
+
+<!-- adding body components for the home page directory  -->
+{% block body %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Welcome to TextUtils!</strong> You can analyze your text here in many ways.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container">
+    <form action="analyzed_page" method="GET">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter Your Text Here</label>
+            <textarea name='inputText' class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
+        </div>
+        <div class="form-check form-switch">
+            <input name = 'all_capital'class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Upper Case</label>
+        </div>
+        <div class="form-check form-switch">
+            <input name='remove_punctuation' class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Remove Punctuation</label>
+        </div>
+        <div class="form-check form-switch">
+            <input name = 'new_line_remove' class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Remove New Lines</label>
+        </div>
+        <div class="form-check form-switch">
+            <input name = 'extra_space_remove'class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Remove Extra Spaces</label>
+        </div>
+        <button type="submit" class="btn btn-outline-success">Analyze Text</button>
+    </form>
+
+</div>
+{% endblock %}
